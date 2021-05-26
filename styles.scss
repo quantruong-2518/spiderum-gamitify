@@ -1,9 +1,10 @@
-$section-padding: 20px 80px;
+@import "./assets/scss/mixins.scss";
 
 body,
 html {
   padding: 0;
   margin: 0;
+  width: 100vw;
 }
 
 body {
@@ -20,6 +21,11 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
+
+  @include breakpoint(xs) {
+    height: 12px;
+  }
 }
 
 * {
@@ -28,26 +34,54 @@ body {
 
 section {
   margin-bottom: 80px;
+
+  @include breakpoint(xs) {
+    margin-bottom: 50px;
+  }
 }
 
 header {
   height: 80px;
   display: flex;
-  padding: $section-padding;
+  padding: 20px 80px;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+
+  @include breakpoint(xs) {
+    height: max-content;
+    padding: 10px 20px;
+  }
+
+  @include breakpoint(md) {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 
   > img {
     height: 40px;
+
+    @include breakpoint(xs) {
+      height: 30px;
+      margin: 1rem 0;
+    }
   }
 
   .right-content {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+
     > nav {
       display: flex;
       align-items: center;
 
-      * {
+      :not(:last-child) {
         margin-right: 100px;
+
+        @include breakpoint(xs) {
+          margin-right: 15px;
+        }
       }
     }
 
@@ -57,13 +91,22 @@ header {
       padding: 10px 30px;
       border: none;
       color: white;
+
+      @include breakpoint(xs) {
+        padding: 5px 10px;
+      }
     }
   }
 }
 
 // MAIN
 .main {
-  padding: $section-padding;
+  padding: 20px 80px;
+  // overflow-x: hidden;
+
+  @include breakpoint(xs) {
+    padding: 20px;
+  }
 
   // INTRO
   .intro {
@@ -72,18 +115,34 @@ header {
     align-items: center;
     padding: 20px 200px;
     flex: 1;
+    position: relative;
+    clear: both;
+
+    @include breakpoint(xs) {
+      padding: 10px 0;
+    }
 
     .left-content {
       display: flex;
       flex-direction: column;
       padding: 0 20px;
       align-items: flex-start;
-      flex: 1;
+      z-index: 2;
+
+      @include breakpoint(xs) {
+        padding: 0;
+        width: 100%;
+      }
 
       .logo {
         height: 85px;
         margin-bottom: 50px;
         object-fit: contain;
+        display: none;
+
+        @include breakpoint(sm) {
+          display: flex;
+        }
       }
 
       .question {
@@ -91,6 +150,10 @@ header {
         font-weight: bold;
         font-size: 48px;
         line-height: 59px;
+
+        @include breakpoint(xs) {
+          margin-bottom: 20px;
+        }
       }
 
       .answer {
@@ -101,6 +164,11 @@ header {
 
     .right-content {
       height: 600px;
+
+      @include breakpoint(xs) {
+        height: 300px;
+        margin-left: -85%;
+      }
     }
   }
 
@@ -137,6 +205,10 @@ header {
       padding: 0 200px;
       justify-content: center;
 
+      @include breakpoint(xs) {
+        padding: 0 10px;
+      }
+
       .card {
         display: flex;
         flex-direction: column;
@@ -147,6 +219,13 @@ header {
         width: 26%;
         align-items: flex-start;
         margin: 1rem 1rem;
+
+        @include breakpoint(xs) {
+          width: 100%;
+          margin: 0.5rem 0;
+          padding: 1.5rem;
+          height: 240px;
+        }
 
         > img {
           height: 20%;
@@ -182,6 +261,10 @@ header {
 
     > * {
       margin-bottom: 80px;
+
+      @include breakpoint(xs) {
+        margin-bottom: 3rem;
+      }
     }
 
     > span {
@@ -194,27 +277,48 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow-x: auto;
+      width: 100%;
 
       :not(:last-child) {
         margin-right: 44px;
+
+        @include breakpoint(xs) {
+          margin-right: 20px;
+        }
       }
 
       > img {
         height: 84px;
+
+        @include breakpoint(xs) {
+          height: 50px;
+        }
       }
     }
 
     .character-detail {
       padding: 0 15%;
       display: flex;
+      justify-content: space-between;
+
+      @include breakpoint(xs) {
+        padding: 0;
+        width: 100%;
+      }
 
       > img {
-        height: 400px;
+        height: 300px;
+
+        @include breakpoint(xs) {
+          margin-right: -85%;
+        }
       }
 
       .info {
         display: flex;
         flex-direction: column;
+        width: 100%;
 
         .name {
           font-weight: bold;
@@ -229,6 +333,5 @@ header {
         }
       }
     }
-    
   }
 }
