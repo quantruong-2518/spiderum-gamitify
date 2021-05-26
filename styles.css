@@ -274,7 +274,7 @@ header .right-content .contact-us {
   padding: 0 10px;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1518px) {
   .main .use-case .cases {
     padding: 0 200px;
   }
@@ -314,10 +314,16 @@ header .right-content .contact-us {
 
 @media (min-width: 1280px) {
   .main .use-case .cases .card {
-    padding: 2.875rem 2rem;
+    padding: 2rem;
     height: 309px;
-    width: 26%;
+    width: 20%;
     margin: 1rem 1rem;
+  }
+}
+
+@media (min-width: 1518px) {
+  .main .use-case .cases .card {
+    padding: 2.875rem 2rem;
   }
 }
 
