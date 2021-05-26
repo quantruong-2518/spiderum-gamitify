@@ -2,7 +2,6 @@ body,
 html {
   padding: 0;
   margin: 0;
-  width: 100vw;
 }
 
 body {
@@ -20,12 +19,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-size: 16px;
-}
-
-@media (max-width: 639px) {
-  body {
-    height: 12px;
-  }
 }
 
 * {
@@ -135,12 +128,12 @@ header .right-content .contact-us {
 }
 
 .main {
-  padding: 20px 80px;
+  padding: 80px;
 }
 
 @media (max-width: 639px) {
   .main {
-    padding: 20px;
+    padding: 80px 20px;
   }
 }
 
@@ -154,17 +147,17 @@ header .right-content .contact-us {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 200px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   position: relative;
   clear: both;
+  padding: 10px 0;
 }
 
-@media (max-width: 639px) {
+@media (min-width: 1280px) {
   .main .intro {
-    padding: 10px 0;
+    padding: 20px 200px;
   }
 }
 
@@ -198,7 +191,7 @@ header .right-content .contact-us {
   display: none;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1280px) {
   .main .intro .left-content .logo {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -225,13 +218,15 @@ header .right-content .contact-us {
 }
 
 .main .intro .right-content {
-  height: 600px;
+  height: 300px;
+  right: 3rem;
+  position: absolute;
 }
 
-@media (max-width: 639px) {
+@media (min-width: 1280px) {
   .main .intro .right-content {
-    height: 300px;
-    margin-left: -85%;
+    height: 550px;
+    position: static;
   }
 }
 
@@ -273,15 +268,15 @@ header .right-content .contact-us {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 0 200px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0 10px;
 }
 
-@media (max-width: 639px) {
+@media (min-width: 1280px) {
   .main .use-case .cases {
-    padding: 0 10px;
+    padding: 0 200px;
   }
 }
 
@@ -293,23 +288,36 @@ header .right-content .contact-us {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 309px;
   background: rgba(196, 196, 196, 0.15);
   border-radius: 3px;
-  padding: 2.875rem 2rem;
-  width: 26%;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin: 1rem 1rem;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 1.5rem;
+  height: 240px;
 }
 
-@media (max-width: 639px) {
+@media (min-width: 768px) {
   .main .use-case .cases .card {
-    width: 100%;
-    margin: 0.5rem 0;
-    padding: 1.5rem;
-    height: 240px;
+    width: 80%;
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main .use-case .cases .card {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main .use-case .cases .card {
+    padding: 2.875rem 2rem;
+    height: 309px;
+    width: 26%;
+    margin: 1rem 1rem;
   }
 }
 
